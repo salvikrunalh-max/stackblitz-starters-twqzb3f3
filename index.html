@@ -184,11 +184,11 @@
 
       /* ===== HERO SECTION ===== */
       .hero {
-        min-height: 100vh;
+        min-height: 90vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 8rem 2rem 4rem;
+        padding: 6rem 2rem 3rem;
         position: relative;
         overflow: hidden;
       }
@@ -258,37 +258,49 @@
       }
 
       .hero-content {
-        max-width: 1000px;
-        text-align: center;
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3.5rem;
+        align-items: center;
+        text-align: left;
         position: relative;
         z-index: 1;
+      }
+
+      .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .hero-badge {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.5rem 1.25rem;
+        padding: 0.4rem 1rem;
         background: var(--bg-glass);
         border: 1px solid var(--border-glass);
         border-radius: 50px;
-        font-size: 0.875rem;
+        font-size: 0.8rem;
         color: var(--accent-cyan);
-        margin-bottom: 2rem;
+        margin-bottom: 1.25rem;
         backdrop-filter: blur(10px);
       }
 
       .hero-badge svg {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
       }
 
       .hero h1 {
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-size: clamp(2rem, 4.5vw, 3.25rem);
         font-weight: 900;
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-        letter-spacing: -2px;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+        letter-spacing: -1.5px;
       }
 
       .hero h1 .highlight {
@@ -303,19 +315,19 @@
       }
 
       .hero-subtitle {
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        font-size: 1.05rem;
         color: var(--text-secondary);
-        max-width: 700px;
-        margin: 0 auto 3rem;
-        line-height: 1.7;
+        max-width: 680px;
+        margin: 0 0 2rem 0;
+        line-height: 1.6;
       }
 
       .hero-cta-group {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 1.25rem;
-        margin-bottom: 3rem;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
         flex-wrap: wrap;
       }
 
@@ -326,36 +338,36 @@
           var(--accent-blue)
         );
         color: var(--bg-primary);
-        padding: 1rem 2.25rem;
-        border-radius: 10px;
+        padding: 0.85rem 1.85rem;
+        border-radius: 8px;
         font-weight: 700;
-        font-size: 1.05rem;
+        font-size: 0.95rem;
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.5rem;
       }
 
       .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.35);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
       }
 
       .btn-secondary {
         background: transparent;
         color: var(--text-primary);
-        padding: 1rem 2.25rem;
-        border-radius: 10px;
+        padding: 0.85rem 1.85rem;
+        border-radius: 8px;
         font-weight: 600;
-        font-size: 1.05rem;
+        font-size: 0.95rem;
         border: 2px solid var(--border-glass);
         cursor: pointer;
         transition: all 0.3s ease;
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.5rem;
         text-decoration: none;
       }
 
@@ -367,77 +379,143 @@
       .trust-signals {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 2.5rem;
+        justify-content: flex-start;
+        gap: 1.75rem;
         flex-wrap: wrap;
-        opacity: 0.8;
+        opacity: 0.85;
       }
 
       .trust-signal {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
         color: var(--text-secondary);
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       .trust-signal svg {
         color: var(--accent-cyan);
+        width: 16px;
+        height: 16px;
+      }
+
+      /* ===== HERO SERVICES CARD ===== */
+      .hero-services-card {
+        background: var(--bg-glass);
+        border: 1px solid var(--border-glass);
+        border-radius: 20px;
+        padding: 1.75rem;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-services-card h3 {
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.5px;
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+      }
+
+      .hero-services-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero-service-item {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+
+      .hero-service-item-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: rgba(0, 212, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--accent-cyan);
+      }
+
+      .hero-service-item-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .hero-service-item-info h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+        color: var(--text-primary);
+      }
+
+      .hero-service-item-info p {
+        font-size: 0.825rem;
+        color: var(--text-secondary);
+        line-height: 1.4;
       }
 
       /* ===== SERVICES SECTION ===== */
       .services {
-        padding: 8rem 2rem;
+        padding: 3.5rem 2rem;
         position: relative;
       }
 
       .section-header {
         text-align: center;
-        margin-bottom: 5rem;
+        margin-bottom: 2.5rem;
       }
 
       .section-label {
         display: inline-block;
         color: var(--accent-cyan);
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
       }
 
       .section-title {
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(1.5rem, 3.5vw, 2.25rem);
         font-weight: 800;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         letter-spacing: -1px;
       }
 
       .section-subtitle {
         color: var(--text-secondary);
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         max-width: 600px;
         margin: 0 auto;
-        line-height: 1.7;
+        line-height: 1.6;
       }
 
       .services-grid {
         max-width: 1400px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
       }
 
       .service-card {
         background: var(--bg-glass);
         border: 1px solid var(--border-glass);
-        border-radius: 20px;
-        padding: 2.5rem;
+        border-radius: 16px;
+        padding: 1.5rem;
         transition: all 0.4s ease;
         backdrop-filter: blur(10px);
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
 
       .service-card.visible {
@@ -447,60 +525,61 @@
 
       .service-card:hover {
         border-color: rgba(0, 212, 255, 0.3);
-        transform: translateY(-8px);
-        box-shadow: 0 20px 50px rgba(0, 212, 255, 0.15);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.12);
       }
 
       .service-icon {
-        width: 64px;
-        height: 64px;
+        width: 48px;
+        height: 48px;
         background: linear-gradient(
           135deg,
           rgba(0, 212, 255, 0.2),
           rgba(14, 165, 233, 0.2)
         );
-        border-radius: 16px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
       }
 
       .service-icon svg {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
         color: var(--accent-cyan);
       }
 
       .service-card h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
       }
 
       .service-card p {
         color: var(--text-secondary);
-        margin-bottom: 1.5rem;
-        line-height: 1.7;
+        margin-bottom: 1.25rem;
+        line-height: 1.6;
+        font-size: 0.9rem;
       }
 
       .service-deliverables {
         list-style: none;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .service-deliverables li {
         display: flex;
         align-items: flex-start;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
         color: var(--text-secondary);
-        font-size: 0.95rem;
+        font-size: 0.85rem;
       }
 
       .service-deliverables li svg {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         color: var(--accent-cyan);
         flex-shrink: 0;
         margin-top: 2px;
@@ -509,20 +588,21 @@
       .service-link {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.4rem;
         color: var(--accent-cyan);
         font-weight: 600;
+        font-size: 0.875rem;
         text-decoration: none;
         transition: gap 0.3s ease;
       }
 
       .service-link:hover {
-        gap: 0.75rem;
+        gap: 0.6rem;
       }
 
       /* ===== PRICING SECTION ===== */
       .pricing {
-        padding: 8rem 2rem;
+        padding: 3.5rem 2rem;
         background: linear-gradient(
           180deg,
           transparent,
@@ -535,20 +615,20 @@
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
         align-items: start;
       }
 
       .pricing-card {
         background: var(--bg-glass);
         border: 1px solid var(--border-glass);
-        border-radius: 24px;
-        padding: 2.5rem;
+        border-radius: 20px;
+        padding: 1.75rem;
         transition: all 0.4s ease;
         backdrop-filter: blur(10px);
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
 
       .pricing-card.visible {
@@ -564,16 +644,16 @@
           var(--bg-glass)
         );
         position: relative;
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
 
       .pricing-card.featured.visible {
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
 
       .pricing-badge {
         position: absolute;
-        top: -12px;
+        top: -10px;
         left: 50%;
         transform: translateX(-50%);
         background: linear-gradient(
@@ -582,106 +662,104 @@
           var(--accent-blue)
         );
         color: var(--bg-primary);
-        padding: 0.5rem 1.5rem;
+        padding: 0.35rem 1.25rem;
         border-radius: 50px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
       }
 
       .pricing-name {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         font-weight: 700;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.35rem;
       }
 
       .pricing-description {
         color: var(--text-muted);
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
       }
 
       .pricing-amount {
         display: flex;
         align-items: baseline;
-        gap: 0.25rem;
-        margin-bottom: 0.5rem;
+        gap: 0.2rem;
+        margin-bottom: 0.25rem;
       }
 
       .pricing-currency {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 600;
         color: var(--text-secondary);
       }
 
       .pricing-value {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 900;
         line-height: 1;
-        letter-spacing: -2px;
+        letter-spacing: -1.5px;
       }
 
       .pricing-period {
-        font-size: 1rem;
+        font-size: 0.85rem;
         color: var(--text-muted);
-        margin-bottom: 2rem;
+        margin-bottom: 1.25rem;
       }
 
       .pricing-divider {
         height: 1px;
         background: var(--border-glass);
-        margin: 2rem 0;
+        margin: 1.25rem 0;
       }
 
       .pricing-features {
         list-style: none;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .pricing-features li {
         display: flex;
         align-items: flex-start;
-        gap: 0.75rem;
-        margin-bottom: 1rem;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
         color: var(--text-secondary);
-        font-size: 0.95rem;
+        font-size: 0.875rem;
       }
 
       .pricing-features li svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         color: var(--success);
         flex-shrink: 0;
       }
 
-      .pricing-addons {
-        background: rgba(0, 212, 255, 0.05);
-        border-radius: 12px;
-        padding: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .pricing-addons-title {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: var(--accent-cyan);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 0.5rem;
-      }
-
-      .pricing-addons-text {
-        font-size: 0.85rem;
+      .pricing-footnote {
+        text-align: center;
+        margin-top: 2rem;
         color: var(--text-secondary);
+        font-size: 0.85rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.75rem 1.25rem;
+        background: rgba(0, 212, 255, 0.03);
+        border: 1px dashed var(--border-glass);
+        border-radius: 10px;
+        line-height: 1.5;
+      }
+
+      .pricing-footnote strong {
+        color: var(--accent-cyan);
       }
 
       .pricing-cta {
         width: 100%;
-        padding: 1rem;
-        border-radius: 12px;
+        padding: 0.85rem;
+        border-radius: 10px;
         font-weight: 700;
-        font-size: 1rem;
+        font-size: 0.95rem;
         cursor: pointer;
         transition: all 0.3s ease;
         text-decoration: none;
@@ -702,7 +780,7 @@
       }
 
       .pricing-cta.primary:hover {
-        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.25);
       }
 
       .pricing-cta.secondary {
@@ -716,101 +794,262 @@
         background: rgba(0, 212, 255, 0.1);
       }
 
-      /* ===== CALENDAR SECTION ===== */
-      .calendar-section {
-        padding: 8rem 2rem;
+      /* ===== TESTIMONIALS & FAQ SECTION ===== */
+      .testimonials-faq {
+        padding: 3.5rem 2rem;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 212, 255, 0.02),
+          transparent,
+          rgba(0, 212, 255, 0.02)
+        );
         position: relative;
       }
 
-      .calendar-container {
-        max-width: 900px;
+      .testimonials-faq-container {
+        max-width: 1400px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
         align-items: start;
       }
 
-      .calendar-info {
-        opacity: 0;
-        transform: translateX(-30px);
-        transition: all 0.6s ease;
-      }
-
-      .calendar-info.visible {
+      .testimonials-side,
+      .faq-side {
         opacity: 1;
-        transform: translateX(0);
+        scroll-margin-top: 100px;
       }
 
-      .calendar-info h2 {
-        font-size: 2.5rem;
+      .section-header-compact {
+        margin-bottom: 1.75rem;
+      }
+
+      .section-header-compact .section-label {
+        display: inline-block;
+        color: var(--accent-cyan);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+      }
+
+      .section-header-compact .section-title {
+        font-size: 1.75rem;
         font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+
+      .testimonials-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .testimonial-card-compact {
+        background: var(--bg-glass);
+        border: 1px solid var(--border-glass);
+        border-radius: 16px;
+        padding: 1.5rem;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .testimonial-card-compact.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .testimonial-card-compact:hover {
+        border-color: rgba(0, 212, 255, 0.2);
+      }
+
+      .testimonial-stars {
+        display: flex;
+        gap: 0.2rem;
         margin-bottom: 1rem;
-        letter-spacing: -1px;
       }
 
-      .calendar-info p {
-        color: var(--text-secondary);
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin-bottom: 2rem;
+      .testimonial-stars svg {
+        width: 16px;
+        height: 16px;
+        color: var(--warning);
+        fill: var(--warning);
       }
 
-      .calendar-info-list {
-        list-style: none;
+      .testimonial-quote-compact {
+        font-size: 0.925rem;
+        line-height: 1.6;
+        color: var(--text-primary);
+        margin-bottom: 1.25rem;
+        font-style: italic;
       }
 
-      .calendar-info-list li {
+      .testimonial-author {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-        color: var(--text-secondary);
+        gap: 0.75rem;
       }
 
-      .calendar-info-list li svg {
-        width: 24px;
-        height: 24px;
+      .testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 212, 255, 0.2),
+          rgba(14, 165, 233, 0.2)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
         color: var(--accent-cyan);
+        font-size: 1rem;
+      }
+
+      .testimonial-info h4 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.15rem;
+      }
+
+      .testimonial-info p {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      /* ===== FAQ SIDE ===== */
+      .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .faq-item {
+        background: var(--bg-glass);
+        border: 1px solid var(--border-glass);
+        border-radius: 12px;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+      }
+
+      .faq-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        background: transparent;
+        border: none;
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        transition: all 0.2s ease;
+      }
+
+      .faq-question:hover {
+        color: var(--accent-cyan);
+      }
+
+      .faq-question svg {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+        color: var(--accent-cyan);
+      }
+
+      .faq-item.active .faq-question svg {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+      }
+
+      .faq-answer-content {
+        padding: 0 1.5rem 1.25rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-size: 0.875rem;
+      }
+
+      /* ===== CONNECT SECTION (CALENDAR & CONTACT) ===== */
+      .connect-section {
+        padding: 3.5rem 2rem;
+        position: relative;
+      }
+
+      .connect-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .calendar-side,
+      .contact-side {
+        scroll-margin-top: 100px;
       }
 
       .calendar-wrapper {
         background: var(--bg-glass);
         border: 1px solid var(--border-glass);
-        border-radius: 24px;
-        padding: 2rem;
+        border-radius: 20px;
+        padding: 1.5rem;
         backdrop-filter: blur(10px);
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateY(20px);
         transition: all 0.6s ease;
       }
 
       .calendar-wrapper.visible {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
       }
 
       .calendar-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .calendar-month-year {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 700;
       }
 
       .calendar-nav {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.4rem;
       }
 
       .calendar-nav-btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
         border: 1px solid var(--border-glass);
         background: transparent;
         color: var(--text-primary);
@@ -834,27 +1073,27 @@
       .calendar-weekdays {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 0.5rem;
-        margin-bottom: 0.5rem;
+        gap: 0.4rem;
+        margin-bottom: 0.4rem;
       }
 
       .calendar-weekday {
         text-align: center;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         font-weight: 600;
         color: var(--text-muted);
-        padding: 0.5rem;
+        padding: 0.4rem;
       }
 
       .calendar-days {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 0.5rem;
+        gap: 0.4rem;
       }
 
       .calendar-day {
         aspect-ratio: 1;
-        border-radius: 10px;
+        border-radius: 8px;
         border: 1px solid transparent;
         background: transparent;
         color: var(--text-primary);
@@ -863,6 +1102,7 @@
         align-items: center;
         justify-content: center;
         font-weight: 500;
+        font-size: 0.85rem;
         transition: all 0.2s ease;
       }
 
@@ -893,8 +1133,8 @@
       }
 
       .time-slots-panel {
-        margin-top: 2rem;
-        padding-top: 2rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
         border-top: 1px solid var(--border-glass);
         display: none;
       }
@@ -916,26 +1156,26 @@
       }
 
       .time-slots-title {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         color: var(--text-secondary);
       }
 
       .time-slots-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 0.75rem;
+        gap: 0.5rem;
       }
 
       .time-slot {
-        padding: 0.75rem;
-        border-radius: 8px;
+        padding: 0.5rem;
+        border-radius: 6px;
         border: 1px solid var(--border-glass);
         background: transparent;
         color: var(--text-primary);
         cursor: pointer;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: 500;
         transition: all 0.2s ease;
         text-align: center;
@@ -954,15 +1194,15 @@
 
       .calendar-confirmation {
         display: none;
-        margin-top: 2rem;
-        padding: 2rem;
+        margin-top: 1.5rem;
+        padding: 1.5rem;
         background: linear-gradient(
           135deg,
           rgba(16, 185, 129, 0.15),
           rgba(16, 185, 129, 0.05)
         );
         border: 1px solid rgba(16, 185, 129, 0.3);
-        border-radius: 16px;
+        border-radius: 12px;
         text-align: center;
       }
 
@@ -972,314 +1212,48 @@
       }
 
       .calendar-confirmation svg {
-        width: 48px;
-        height: 48px;
+        width: 36px;
+        height: 36px;
         color: var(--success);
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
       }
 
       .calendar-confirmation h3 {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         font-weight: 700;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.35rem;
       }
 
       .calendar-confirmation p {
         color: var(--text-secondary);
-        font-size: 0.95rem;
+        font-size: 0.85rem;
       }
 
-      /* ===== TESTIMONIALS SECTION ===== */
-      .testimonials {
-        padding: 8rem 2rem;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 212, 255, 0.02),
-          transparent,
-          rgba(0, 212, 255, 0.02)
-        );
-      }
-
-      .testimonials-grid {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-      }
-
-      .testimonial-card {
+      /* ===== CONTACT FORM ===== */
+      .contact-form-wrapper {
         background: var(--bg-glass);
         border: 1px solid var(--border-glass);
         border-radius: 20px;
         padding: 2rem;
-        transition: all 0.4s ease;
         backdrop-filter: blur(10px);
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      .testimonial-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .testimonial-card:hover {
-        border-color: rgba(0, 212, 255, 0.3);
-      }
-
-      .testimonial-stars {
-        display: flex;
-        gap: 0.25rem;
-        margin-bottom: 1.25rem;
-      }
-
-      .testimonial-stars svg {
-        width: 20px;
-        height: 20px;
-        color: var(--warning);
-        fill: var(--warning);
-      }
-
-      .testimonial-quote {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        color: var(--text-primary);
-        margin-bottom: 1.5rem;
-        font-style: italic;
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .testimonial-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: linear-gradient(
-          135deg,
-          rgba(0, 212, 255, 0.2),
-          rgba(14, 165, 233, 0.2)
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        color: var(--accent-cyan);
-        font-size: 1.25rem;
-      }
-
-      .testimonial-info h4 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-      }
-
-      .testimonial-info p {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-      }
-
-      /* ===== FAQ SECTION ===== */
-      .faq {
-        padding: 8rem 2rem;
-      }
-
-      .faq-container {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .faq-item {
-        background: var(--bg-glass);
-        border: 1px solid var(--border-glass);
-        border-radius: 16px;
-        margin-bottom: 1rem;
-        overflow: hidden;
         opacity: 0;
         transform: translateY(20px);
-        transition: all 0.4s ease;
-      }
-
-      .faq-item.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .faq-question {
-        width: 100%;
-        padding: 1.5rem 2rem;
-        background: transparent;
-        border: none;
-        color: var(--text-primary);
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-align: left;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        transition: all 0.2s ease;
-      }
-
-      .faq-question:hover {
-        color: var(--accent-cyan);
-      }
-
-      .faq-question svg {
-        width: 24px;
-        height: 24px;
-        transition: transform 0.3s ease;
-        color: var(--accent-cyan);
-      }
-
-      .faq-item.active .faq-question svg {
-        transform: rotate(180deg);
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
-      }
-
-      .faq-item.active .faq-answer {
-        max-height: 500px;
-      }
-
-      .faq-answer-content {
-        padding: 0 2rem 1.5rem;
-        color: var(--text-secondary);
-        line-height: 1.7;
-      }
-
-      /* ===== CONTACT SECTION ===== */
-      .contact {
-        padding: 8rem 2rem;
-        background: linear-gradient(
-          180deg,
-          transparent,
-          rgba(0, 212, 255, 0.02)
-        );
-      }
-
-      .contact-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 4rem;
-        align-items: start;
-      }
-
-      .contact-info {
-        opacity: 0;
-        transform: translateX(-30px);
-        transition: all 0.6s ease;
-      }
-
-      .contact-info.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .contact-info h2 {
-        font-size: 2.5rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-        letter-spacing: -1px;
-      }
-
-      .contact-info > p {
-        color: var(--text-secondary);
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin-bottom: 2.5rem;
-      }
-
-      .contact-details {
-        margin-bottom: 3rem;
-      }
-
-      .contact-detail {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .contact-detail svg {
-        width: 24px;
-        height: 24px;
-        color: var(--accent-cyan);
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-
-      .contact-detail h4 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-      }
-
-      .contact-detail p {
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-      }
-
-      .contact-social {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .social-link {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        border: 1px solid var(--border-glass);
-        background: transparent;
-        color: var(--text-secondary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s ease;
-        cursor: pointer;
-      }
-
-      .social-link:hover {
-        border-color: var(--accent-cyan);
-        background: rgba(0, 212, 255, 0.1);
-        color: var(--accent-cyan);
-      }
-
-      .contact-form-wrapper {
-        background: var(--bg-glass);
-        border: 1px solid var(--border-glass);
-        border-radius: 24px;
-        padding: 3rem;
-        backdrop-filter: blur(10px);
-        opacity: 0;
-        transform: translateX(30px);
         transition: all 0.6s ease;
       }
 
       .contact-form-wrapper.visible {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
       }
 
       .form-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 1rem;
       }
 
       .form-group {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       .form-group.full {
@@ -1288,9 +1262,9 @@
 
       .form-label {
         display: block;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: 600;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.35rem;
         color: var(--text-primary);
       }
 
@@ -1302,12 +1276,12 @@
       .form-select,
       .form-textarea {
         width: 100%;
-        padding: 1rem 1.25rem;
+        padding: 0.75rem 1rem;
         background: var(--bg-secondary);
         border: 1px solid var(--border-glass);
-        border-radius: 12px;
+        border-radius: 8px;
         color: var(--text-primary);
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-family: inherit;
         transition: all 0.2s ease;
       }
@@ -1323,7 +1297,8 @@
       .form-textarea:focus {
         outline: none;
         border-color: var(--accent-cyan);
-        box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.25);
+        background-color: rgba(17, 24, 39, 0.8);
       }
 
       .form-select {
@@ -1332,17 +1307,17 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394A3B8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: right 1rem center;
-        background-size: 20px;
+        background-size: 18px;
       }
 
       .form-textarea {
         resize: vertical;
-        min-height: 120px;
+        min-height: 100px;
       }
 
       .form-submit {
         width: 100%;
-        padding: 1.25rem;
+        padding: 0.9rem;
         background: linear-gradient(
           135deg,
           var(--accent-cyan),
@@ -1350,20 +1325,20 @@
         );
         color: var(--bg-primary);
         border: none;
-        border-radius: 12px;
-        font-size: 1rem;
+        border-radius: 8px;
+        font-size: 0.95rem;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.75rem;
+        gap: 0.5rem;
       }
 
       .form-submit:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.25);
       }
 
       .form-submit:active {
@@ -1373,7 +1348,7 @@
       .form-success {
         display: none;
         text-align: center;
-        padding: 3rem 2rem;
+        padding: 2rem 1.5rem;
       }
 
       .form-success.active {
@@ -1381,30 +1356,92 @@
       }
 
       .form-success svg {
-        width: 64px;
-        height: 64px;
+        width: 48px;
+        height: 48px;
         color: var(--success);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       .form-success h3 {
-        font-size: 1.75rem;
+        font-size: 1.35rem;
         font-weight: 700;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
       }
 
       .form-success p {
         color: var(--text-secondary);
-        font-size: 1.1rem;
+        font-size: 0.95rem;
       }
 
       .contact-form.hidden {
         display: none;
       }
 
+      /* ===== BUTTON SHINE, CARD HOVER & CONNECT DETAILS ===== */
+      .btn-primary, .form-submit, .pricing-cta.primary {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::after, .form-submit::after, .pricing-cta.primary::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-25deg);
+        transition: 0.75s;
+      }
+
+      .btn-primary:hover::after, .form-submit:hover::after, .pricing-cta.primary:hover::after {
+        left: 150%;
+      }
+
+      .pricing-card:hover {
+        border-color: rgba(0, 212, 255, 0.3);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.12);
+      }
+
+      .pricing-card.featured:hover {
+        border-color: var(--accent-cyan);
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 0 0 25px rgba(0, 212, 255, 0.2), 0 20px 45px rgba(0, 212, 255, 0.15);
+      }
+
+      .connect-details-bar {
+        max-width: 1400px;
+        margin: 2.5rem auto 0;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--border-glass);
+        flex-wrap: wrap;
+      }
+
+      .connect-detail-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .connect-detail-item svg {
+        color: var(--accent-cyan);
+      }
+
       /* ===== FOOTER ===== */
       .footer {
-        padding: 4rem 2rem 2rem;
+        padding: 3rem 2rem 1.5rem;
         border-top: 1px solid var(--border-glass);
       }
 
@@ -1416,24 +1453,24 @@
       .footer-top {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 3rem;
-        margin-bottom: 3rem;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
       }
 
       .footer-brand p {
         color: var(--text-secondary);
-        font-size: 0.95rem;
-        line-height: 1.7;
-        margin-top: 1rem;
-        max-width: 350px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-top: 0.75rem;
+        max-width: 320px;
       }
 
       .footer-links h4 {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-bottom: 1.25rem;
+        margin-bottom: 1rem;
         color: var(--text-primary);
       }
 
@@ -1442,13 +1479,13 @@
       }
 
       .footer-links li {
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
       }
 
       .footer-links a {
         color: var(--text-secondary);
         text-decoration: none;
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         transition: color 0.2s ease;
       }
 
@@ -1457,7 +1494,7 @@
       }
 
       .footer-bottom {
-        padding-top: 2rem;
+        padding-top: 1.5rem;
         border-top: 1px solid var(--border-glass);
         display: flex;
         align-items: center;
@@ -1468,18 +1505,18 @@
 
       .footer-bottom p {
         color: var(--text-muted);
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       .footer-legal {
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
       }
 
       .footer-legal a {
         color: var(--text-muted);
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         transition: color 0.2s ease;
       }
 
@@ -1489,12 +1526,32 @@
 
       /* ===== RESPONSIVE ===== */
       @media (max-width: 1024px) {
-        .calendar-container {
+        .hero-content {
           grid-template-columns: 1fr;
+          text-align: center;
+          gap: 2.5rem;
         }
 
-        .contact-container {
+        .hero-text {
+          align-items: center;
+        }
+
+        .hero-cta-group {
+          justify-content: center;
+        }
+
+        .trust-signals {
+          justify-content: center;
+        }
+
+        .testimonials-faq-container {
           grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .connect-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
         }
 
         .footer-top {
@@ -1516,7 +1573,7 @@
         }
 
         .hero {
-          padding: 7rem 1.5rem 3rem;
+          padding: 5rem 1.5rem 2rem;
         }
 
         .services-grid {
@@ -1525,11 +1582,9 @@
 
         .services,
         .pricing,
-        .calendar-section,
-        .testimonials,
-        .faq,
-        .contact {
-          padding: 5rem 1.5rem;
+        .testimonials-faq,
+        .connect-section {
+          padding: 3rem 1.25rem;
         }
 
         .pricing-card.featured {
@@ -1542,10 +1597,6 @@
 
         .time-slots-grid {
           grid-template-columns: repeat(2, 1fr);
-        }
-
-        .testimonials-grid {
-          grid-template-columns: 1fr;
         }
 
         .form-row {
@@ -1564,15 +1615,15 @@
 
       @media (max-width: 480px) {
         section {
-          padding: 4rem 1rem;
+          padding: 2.5rem 1rem;
         }
 
         .section-title {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
         }
 
         .contact-form-wrapper {
-          padding: 2rem 1.5rem;
+          padding: 1.5rem 1rem;
         }
 
         .time-slots-grid {
@@ -1653,42 +1704,12 @@
       <div class="hero-bg"></div>
       <div class="hero-particles" id="particles"></div>
       <div class="hero-content">
-        <div class="hero-badge">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-            <path d="M2 17l10 5 10-5"></path>
-            <path d="M2 12l10 5 10-5"></path>
-          </svg>
-          Enterprise Automation Partner
-        </div>
-        <h1>
-          Transform Operations.<br /><span class="highlight"
-            >Accelerate Growth.</span
-          >
-        </h1>
-        <p class="hero-subtitle">
-          VelocIQ partners with forward-thinking organizations to eliminate
-          operational inefficiencies, streamline complex workflows, and build
-          intelligent automation roadmaps that drive measurable business
-          outcomes. From strategic IT consulting to end-to-end digital
-          transformation, we architect solutions that scale.
-        </p>
-        <div class="hero-cta-group">
-          <a href="#calendar" class="btn-primary">
+        <div class="hero-text">
+          <div class="hero-badge">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="14"
+              height="14"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -1696,81 +1717,179 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-              ></path>
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
             </svg>
-            Book a Strategy Call
-          </a>
-          <a href="#services" class="btn-secondary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <polygon points="10 8 16 12 10 16 10 8"></polygon>
-            </svg>
-            Explore Our Services
-          </a>
-        </div>
-        <div class="trust-signals">
-          <div class="trust-signal">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            SOC 2 Type II Certified
+            Enterprise Automation Partner
           </div>
-          <div class="trust-signal">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+          <h1>
+            Transform Operations.<br /><span class="highlight"
+              >Accelerate Growth.</span
             >
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-            Trusted by 200+ Companies
+          </h1>
+          <p class="hero-subtitle">
+            VelocIQ is an enterprise automation partner and strategic IT consultancy. We help forward-thinking organizations eliminate operational friction, build intelligent automation roadmaps, and scale robust technology systems that drive measurable ROI.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#calendar" class="btn-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              Book a Strategy Call
+            </a>
+            <a href="#services" class="btn-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              Explore Our Services
+            </a>
           </div>
-          <div class="trust-signal">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-            </svg>
-            Average 3.2x ROI in 12 Months
+          <div class="trust-signals">
+            <div class="trust-signal">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              SOC 2 Type II
+            </div>
+            <div class="trust-signal">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Trusted by 200+ Companies
+            </div>
+            <div class="trust-signal">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              3.2x Average ROI
+            </div>
+          </div>
+        </div>
+
+        <!-- Glassmorphic Services summary -->
+        <div class="hero-services-card">
+          <h3>Core Expertise</h3>
+          <div class="hero-services-list">
+            <div class="hero-service-item">
+              <div class="hero-service-item-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <div class="hero-service-item-info">
+                <h4>Process Automation</h4>
+                <p>Intelligent workflows, RPA integration, and API connectors that eliminate manual friction.</p>
+              </div>
+            </div>
+            <div class="hero-service-item">
+              <div class="hero-service-item-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div class="hero-service-item-info">
+                <h4>Strategic IT Consulting</h4>
+                <p>Infrastructure modernizations, secure cloud migrations, and robust cybersecurity posture audits.</p>
+              </div>
+            </div>
+            <div class="hero-service-item">
+              <div class="hero-service-item-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <div class="hero-service-item-info">
+                <h4>Digital Transformation</h4>
+                <p>Strategic C-suite advisory, structured change management, and scaled customer journeys.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1860,38 +1979,6 @@
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
               API integrations across disparate systems
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Real-time monitoring dashboards and alerts
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Continuous improvement optimization cycles
             </li>
           </ul>
           <a href="#contact" class="service-link">
@@ -1986,38 +2073,6 @@
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
               Cybersecurity posture evaluation
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Vendor evaluation and selection support
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              IT governance and compliance frameworks
             </li>
           </ul>
           <a href="#contact" class="service-link">
@@ -2114,38 +2169,6 @@
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
               Customer journey mapping and optimization
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Data strategy and analytics enablement
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Innovation lab and pilot program design
             </li>
           </ul>
           <a href="#contact" class="service-link">
@@ -2258,46 +2281,7 @@
               </svg>
               Email and ticket-based support
             </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Standard documentation package
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Access to automation playbook library
-            </li>
           </ul>
-          <div class="pricing-addons">
-            <p class="pricing-addons-title">Available Add-Ons</p>
-            <p class="pricing-addons-text">
-              RPA implementation projects starting at $15K. Cloud migration
-              assessments from $8K.
-            </p>
-          </div>
           <a href="#calendar" class="pricing-cta secondary"
             >Schedule a Consultation</a
           >
@@ -2379,64 +2363,9 @@
               >
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              Priority 48-hour response SLA
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
               Dedicated success manager
             </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Custom dashboard and analytics portal
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Team training workshops (quarterly)
-            </li>
           </ul>
-          <div class="pricing-addons">
-            <p class="pricing-addons-title">Available Add-Ons</p>
-            <p class="pricing-addons-text">
-              Full RPA deployment from $35K. Digital transformation assessments
-              from $25K.
-            </p>
-          </div>
           <a href="#calendar" class="pricing-cta primary"
             >Book a Strategy Call</a
           >
@@ -2517,1135 +2446,213 @@
               >
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              24-hour priority response SLA
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Embedded on-site consultants (optional)
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Executive coaching and change leadership
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
               Custom IP development
             </li>
           </ul>
-          <div class="pricing-addons">
-            <p class="pricing-addons-title">Available Add-Ons</p>
-            <p class="pricing-addons-text">
-              Enterprise-wide RPA rollout from $150K. Multi-year transformation
-              programs custom quoted.
-            </p>
-          </div>
           <a href="#calendar" class="pricing-cta secondary"
             >Schedule a Consultation</a
           >
         </div>
       </div>
-    </section>
 
-    <!-- Calendar Section -->
-    <section class="calendar-section" id="calendar">
-      <div class="calendar-container">
-        <div class="calendar-info">
-          <span class="section-label">Book Your Session</span>
-          <h2>Schedule Your Free Strategy Call</h2>
-          <p>
-            Connect directly with a senior VelocIQ consultant for a 45-minute
-            discovery call. We'll explore your operational challenges, identify
-            automation opportunities, and outline a tailored roadmap for
-            measurable impact.
-          </p>
-          <ul class="calendar-info-list">
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              No obligation, no hard sell
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Confidential operational assessment
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Actionable insights from day one
-            </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Calendar invite sent instantly
-            </li>
-          </ul>
+      <!-- Consolidated Pricing Footnote -->
+      <div class="pricing-footnote">
+        <p><strong>Available Add-Ons:</strong> RPA implementation projects starting at $15K. Cloud migration assessments from $8K. Enterprise-wide RPA rollouts starting from $150K. Multi-department automations and digital transformation roadmaps are custom quoted.</p>
+      </div>
+    </section>    <!-- Testimonials & FAQ Section -->
+    <section class="testimonials-faq" id="testimonials">
+      <div class="testimonials-faq-container">
+        <!-- Testimonials Side -->
+        <div class="testimonials-side">
+          <div class="section-header-compact">
+            <span class="section-label">Success Stories</span>
+            <h2 class="section-title">Client Impact</h2>
+          </div>
+          <div class="testimonials-stack">
+            <div class="testimonial-card-compact">
+              <div class="testimonial-stars">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <p class="testimonial-quote-compact">
+                "VelocIQ completely transformed our supply chain dispatching. We eliminated over 40 hours of manual data entry per week and reduced shipping errors by 85%. Their team is fast, strategic, and outcome-focused."
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">SJ</div>
+                <div class="testimonial-info">
+                  <h4>Sarah Jenkins</h4>
+                  <p>COO, PathFinder Logistics</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card-compact">
+              <div class="testimonial-stars">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <p class="testimonial-quote-compact">
+                "Their strategic IT consulting gave us a clear roadmap for our cloud migration and SOC 2 preparation. We saved hundreds of thousands in infrastructure costs while significantly hardening our security posture."
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">MV</div>
+                <div class="testimonial-info">
+                  <h4>Marcus Vance</h4>
+                  <p>VP of IT, CloudStream</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="calendar-wrapper">
-          <div class="calendar-header">
-            <h3 class="calendar-month-year" id="calendarMonthYear">May 2024</h3>
-            <div class="calendar-nav">
-              <button
-                class="calendar-nav-btn"
-                id="prevMonth"
-                aria-label="Previous month"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
+
+        <!-- FAQ Side -->
+        <div class="faq-side" id="faq">
+          <div class="section-header-compact">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+          </div>
+          <div class="faq-container">
+            <div class="faq-item">
+              <button class="faq-question">
+                What sets VelocIQ apart from other automation consultancies?
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </button>
-              <button
-                class="calendar-nav-btn"
-                id="nextMonth"
-                aria-label="Next month"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="calendar-weekdays">
-            <div class="calendar-weekday">Mon</div>
-            <div class="calendar-weekday">Tue</div>
-            <div class="calendar-weekday">Wed</div>
-            <div class="calendar-weekday">Thu</div>
-            <div class="calendar-weekday">Fri</div>
-            <div class="calendar-weekday">Sat</div>
-            <div class="calendar-weekday">Sun</div>
-          </div>
-          <div class="calendar-days" id="calendarDays"></div>
-          <div class="time-slots-panel" id="timeSlotsPanel">
-            <h4 class="time-slots-title">
-              Available Time Slots for <span id="selectedDateText"></span>
-            </h4>
-            <div class="time-slots-grid" id="timeSlotsGrid">
-              <button class="time-slot" data-time="9:00 AM">9:00 AM</button>
-              <button class="time-slot" data-time="10:00 AM">10:00 AM</button>
-              <button class="time-slot" data-time="11:00 AM">11:00 AM</button>
-              <button class="time-slot" data-time="1:00 PM">1:00 PM</button>
-              <button class="time-slot" data-time="2:00 PM">2:00 PM</button>
-              <button class="time-slot" data-time="3:00 PM">3:00 PM</button>
-              <button class="time-slot" data-time="4:00 PM">4:00 PM</button>
-              <button class="time-slot" data-time="5:00 PM">5:00 PM</button>
-            </div>
-          </div>
-          <div class="calendar-confirmation" id="calendarConfirmation">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-            <h3>Call Scheduled Successfully!</h3>
-            <p id="confirmationMessage">
-              Your strategy call is confirmed. We'll send a calendar invite to
-              your email.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-      <div class="section-header">
-        <span class="section-label">Success Stories</span>
-        <h2 class="section-title">Trusted by Industry Leaders</h2>
-        <p class="section-subtitle">
-          Hear directly from the executives and teams who partnered with VelocIQ
-          to transform their operations.
-        </p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-          </div>
-          <p class="testimonial-quote">
-            "VelocIQ transformed our accounts payable process from a 5-day
-            nightmare into an automated 4-hour workflow. We reduced manual
-            processing time by 67% and eliminated nearly $180,000 in annual
-            operational costs. Their team didn't just implement technology—they
-            redesigned how we work."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MK</div>
-            <div class="testimonial-info">
-              <h4>Marcus Kim</h4>
-              <p>
-                VP of Finance, Pinnacle Healthcare Systems (2,400 employees)
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-          </div>
-          <p class="testimonial-quote">
-            "We were skeptical about working with consultants after two failed
-            transformation projects. VelocIQ was different—they embedded with
-            our team, understood our manufacturing DNA, and built automation
-            that actually worked. Our supply chain visibility improved 340% in
-            six months."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SR</div>
-            <div class="testimonial-info">
-              <h4>Sarah Rodriguez</h4>
-              <p>
-                Chief Operating Officer, Apex Manufacturing Group (Enterprise,
-                12K+ employees)
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-          </div>
-          <p class="testimonial-quote">
-            "As a Series B startup, every operational dollar matters. VelocIQ's
-            Velocity retainer gave us enterprise-grade consulting at a price we
-            could justify. Their automated lead qualification system saved our
-            sales team 25 hours weekly and improved conversion rates by 41%."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JT</div>
-            <div class="testimonial-info">
-              <h4>James Thornton</h4>
-              <p>
-                Co-Founder and CEO, TechForward Analytics (150 employees,
-                FinTech)
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
-            </svg>
-          </div>
-          <p class="testimonial-quote">
-            "The digital transformation advisory exceeded every expectation.
-            VelocIQ helped us consolidate 47 legacy systems into a unified cloud
-            infrastructure, cutting annual IT maintenance by $2.3M. Our CIO
-            calls it the most successful project of his 20-year career."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">LP</div>
-            <div class="testimonial-info">
-              <h4>Lisa Park</h4>
-              <p>
-                Executive Vice President, Sterling Financial Services (Fortune
-                500)
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-      <div class="section-header">
-        <span class="section-label">Common Questions</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">
-          We believe in transparency. Here are the questions we hear most often
-          from prospective clients.
-        </p>
-      </div>
-      <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-question">
-            How quickly can we expect to see measurable results from automation?
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p class="faq-answer-content">
-              Most clients see their first measurable automation wins within
-              30-45 days of engagement kickoff. We prioritize quick-strike
-              opportunities—often departmental workflows that are manual,
-              repetitive, and high-volume—to build momentum and demonstrate ROI
-              early. Full program impact across multiple business units
-              typically compounds over 6-12 months. Our Accelerator tier clients
-              average 2.8x ROI within the first contract year.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            What does onboarding and the first 90 days look like with VelocIQ?
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p class="faq-answer-content">
-              Week one is focused discovery: stakeholder interviews, process
-              documentation, technology stack audit, and pain point mapping.
-              Weeks two through four prioritize roadmap development and
-              quick-win identification. Month two begins implementation on
-              approved projects with weekly check-ins and transparent progress
-              dashboards. Month three expands scope and refines based on
-              learnings. You'll have a dedicated success manager from day one
-              ensuring clear communication and alignment throughout.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            How flexible are your contracts? What if we need more or less
-            support?
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p class="faq-answer-content">
-              All retainer agreements are structured as 3-month initial terms,
-              converting to month-to-month flexibility after the first quarter.
-              We understand business needs evolve—if your requirements change,
-              we can adjust service levels up or down with 30 days notice.
-              Project-based add-ons can be scoped and quoted independently at
-              any time. We don't believe in locking clients into rigid annual
-              contracts that no longer serve their needs.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Will your consultants integrate with our internal teams or work
-            independently?
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p class="faq-answer-content">
-              We operate as an extension of your team, not a black-box vendor.
-              Our consultants work alongside your stakeholders, participate in
-              relevant internal meetings, and use your collaboration tools
-              (Slack, Teams, Asana, etc.). We prioritize knowledge transfer so
-              your team maintains and evolves solutions long-term. Enterprise
-              tier clients can optionally request embedded on-site consultants
-              for deeper integration during critical transformation phases.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            How do you handle data security and sensitive information access?
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p class="faq-answer-content">
-              VelocIQ maintains SOC 2 Type II certification and follows
-              enterprise-grade security protocols across all client engagements.
-              All team members undergo background checks and sign strict NDAs.
-              We use encrypted communication channels, secure credential
-              management, and principle-of-least-privilege access—you define
-              what systems and data we can access. For clients in regulated
-              industries (healthcare, finance, government), we comply with
-              HIPAA, SOC 2, and relevant frameworks, and can execute BAAs or
-              additional compliance documentation as required.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            What differentiates VelocIQ from other consulting and automation
-            agencies?
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p class="faq-answer-content">
-              Three things set us apart. First, we're outcome-obsessed: every
-              engagement has measurable KPIs tied to your business objectives,
-              not vanity metrics. Second, we combine strategy with
-              execution—many firms do one or the other; we design the roadmap
-              and build the solution. Third, we invest in your team's
-              capabilities through structured training and documentation,
-              ensuring long-term independence rather than forced dependency. Our
-              average client tenure of 4+ years and 92% renewal rate reflects
-              this partnership approach.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            Do you work with companies outside the United States?
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p class="faq-answer-content">
-              Yes, approximately 35% of our client portfolio includes
-              organizations headquartered outside the United States. We have
-              experience adapting automation solutions for international
-              regulatory requirements, multiple currencies, and cross-border
-              data workflows. Our team can accommodate meetings across most time
-              zones (Americas, EMEA, and APAC), and key documentation is
-              delivered in English with support for localization discussions
-              where required.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <div class="contact-container">
-        <div class="contact-info">
-          <span class="section-label">Get in Touch</span>
-          <h2>Ready to Transform Your Operations?</h2>
-          <p>
-            Tell us about your challenges, and a senior consultant will reach
-            out within one business day to schedule a personalized discovery
-            call.
-          </p>
-          <div class="contact-details">
-            <div class="contact-detail">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <div>
-                <h4>Headquarters</h4>
-                <p>
-                  3400 Hillview Avenue, Suite 200<br />Palo Alto, California
-                  94304
+              <div class="faq-answer">
+                <p class="faq-answer-content">
+                  Three things set us apart. First, we're outcome-obsessed: every engagement has measurable KPIs tied to your business objectives, not vanity metrics. Second, we combine strategy with execution—many firms do one or the other; we design the roadmap and build the solution. Third, we invest in your team's capabilities through structured training and documentation, ensuring long-term independence rather than forced dependency. Our average client tenure of 4+ years and 92% renewal rate reflects this partnership approach.
                 </p>
               </div>
             </div>
-            <div class="contact-detail">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                ></path>
-              </svg>
-              <div>
-                <h4>Phone</h4>
-                <p>+1 (650) 555-0142</p>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Do you work with companies outside the United States?
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-answer">
+                <p class="faq-answer-content">
+                  Yes, approximately 35% of our client portfolio includes organizations headquartered outside the United States. We have experience adapting automation solutions for international regulatory requirements, multiple currencies, and cross-border data workflows. Our team can accommodate meetings across most time zones (Americas, EMEA, and APAC), and key documentation is delivered in English with support for localization discussions where required.
+                </p>
               </div>
             </div>
-            <div class="contact-detail">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                ></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <div>
-                <h4>Email</h4>
-                <p>engage@velociq.com</p>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                What is your typical engagement timeline?
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-answer">
+                <p class="faq-answer-content">
+                  For strategic consulting, projects typically run 6 to 12 weeks. Retainer-based automation partnerships are ongoing with monthly deliverables and reviews. We start with a 45-minute strategy call to define scope.
+                </p>
               </div>
             </div>
-          </div>
-          <div class="contact-social">
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                ></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
-                ></path>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="GitHub">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.61 6.61 7 7a3.37 3.37 0 0 0-.94 2.55V22"
-                ></path>
-              </svg>
-            </a>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                How do you ensure data security during automation projects?
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-answer">
+                <p class="faq-answer-content">
+                  Security is built into everything we do. We are SOC 2 compliant, and all automation pipelines are developed using enterprise-grade encryption and secure credential storage (like Azure Key Vault). We never access your sensitive production data directly.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="contact-form-wrapper">
-          <form class="contact-form" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="fullName"
-                  >Full Name <span>*</span></label
+      </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section class="connect-section" id="connect">
+      <div class="connect-container">
+        <!-- Calendar Side -->
+        <div class="calendar-side" id="calendar">
+          <div class="section-header-compact">
+            <span class="section-label">Book Your Session</span>
+            <h2 class="section-title">Schedule Your Strategy Call</h2>
+          </div>
+          <div class="calendar-wrapper">
+            <div class="calendar-header">
+              <h3 class="calendar-month-year" id="calendarMonthYear">May 2024</h3>
+              <div class="calendar-nav">
+                <button
+                  class="calendar-nav-btn"
+                  id="prevMonth"
+                  aria-label="Previous month"
                 >
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  class="form-input"
-                  placeholder="Judith Chen"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="companyName"
-                  >Company Name <span>*</span></label
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button
+                  class="calendar-nav-btn"
+                  id="nextMonth"
+                  aria-label="Next month"
                 >
-                <input
-                  type="text"
-                  id="companyName"
-                  name="companyName"
-                  class="form-input"
-                  placeholder="Acme Corporation"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="email"
-                  >Email Address <span>*</span></label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="form-input"
-                  placeholder="j.chen@acmecorp.com"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="phone">Phone Number</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  class="form-input"
-                  placeholder="+1 (555) 123-4567"
-                />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="companySize"
-                  >Company Size <span>*</span></label
-                >
-                <select
-                  id="companySize"
-                  name="companySize"
-                  class="form-select"
-                  required
-                >
-                  <option value="" disabled selected>
-                    Select company size
-                  </option>
-                  <option value="1-50">1-50 employees</option>
-                  <option value="51-200">51-200 employees</option>
-                  <option value="201-1000">201-1000 employees</option>
-                  <option value="1001-5000">1001-5000 employees</option>
-                  <option value="5000+">5000+ employees</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="serviceInterest"
-                  >Service Interest <span>*</span></label
-                >
-                <select
-                  id="serviceInterest"
-                  name="serviceInterest"
-                  class="form-select"
-                  required
-                >
-                  <option value="" disabled selected>Select focus area</option>
-                  <option value="automation">
-                    Business Process Automation
-                  </option>
-                  <option value="consulting">Strategic IT Consulting</option>
-                  <option value="transformation">
-                    Digital Transformation Advisory
-                  </option>
-                  <option value="full">Full Suite Engagement</option>
-                </select>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
               </div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="budgetRange">Budget Range</label>
-              <select id="budgetRange" name="budgetRange" class="form-select">
-                <option value="" disabled selected>Select budget range</option>
-                <option value="5k-15k">$5,000 - $15,000</option>
-                <option value="15k-50k">$15,000 - $50,000</option>
-                <option value="50k-150k">$50,000 - $150,000</option>
-                <option value="150k+">$150,000+</option>
-                <option value="undecided">Undecided / Seeking Guidance</option>
-              </select>
+            <div class="calendar-weekdays">
+              <div class="calendar-weekday">Mon</div>
+              <div class="calendar-weekday">Tue</div>
+              <div class="calendar-weekday">Wed</div>
+              <div class="calendar-weekday">Thu</div>
+              <div class="calendar-weekday">Fri</div>
+              <div class="calendar-weekday">Sat</div>
+              <div class="calendar-weekday">Sun</div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="message"
-                >Your Message <span>*</span></label
-              >
-              <textarea
-                id="message"
-                name="message"
-                class="form-textarea"
-                placeholder="Tell us about your operational challenges, current technology stack, and what success would look like for your organization..."
-                required
-              ></textarea>
+            <div class="calendar-days" id="calendarDays"></div>
+            <div class="time-slots-panel" id="timeSlotsPanel">
+              <h4 class="time-slots-title">
+                Available Time Slots for <span id="selectedDateText"></span>
+              </h4>
+              <div class="time-slots-grid" id="timeSlotsGrid">
+                <button class="time-slot" data-time="9:00 AM">9:00 AM</button>
+                <button class="time-slot" data-time="10:00 AM">10:00 AM</button>
+                <button class="time-slot" data-time="11:00 AM">11:00 AM</button>
+                <button class="time-slot" data-time="1:00 PM">1:00 PM</button>
+                <button class="time-slot" data-time="2:00 PM">2:00 PM</button>
+                <button class="time-slot" data-time="3:00 PM">3:00 PM</button>
+                <button class="time-slot" data-time="4:00 PM">4:00 PM</button>
+                <button class="time-slot" data-time="5:00 PM">5:00 PM</button>
+              </div>
             </div>
-            <button type="submit" class="form-submit">
+            <div class="calendar-confirmation" id="calendarConfirmation">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="48"
+                height="48"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -3653,34 +2660,202 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
-              Send Inquiry
-            </button>
-          </form>
-          <div class="form-success" id="formSuccess">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="64"
-              height="64"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-            <h3>Inquiry Received</h3>
-            <p>
-              Thank you for reaching out. A senior VelocIQ consultant will
-              contact you within one business day to discuss your requirements
-              and schedule a personalized discovery call.
-            </p>
+              <h3>Call Scheduled Successfully!</h3>
+              <p id="confirmationMessage">
+                Your strategy call is confirmed. We'll send a calendar invite to
+                your email.
+              </p>
+            </div>
           </div>
+        </div>
+
+        <!-- Contact Side -->
+        <div class="contact-side" id="contact">
+          <div class="section-header-compact">
+            <span class="section-label">Get in Touch</span>
+            <h2 class="section-title">Ready to Transform?</h2>
+          </div>
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="fullName"
+                    >Full Name <span>*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    class="form-input"
+                    placeholder="Judith Chen"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="companyName"
+                    >Company Name <span>*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="companyName"
+                    name="companyName"
+                    class="form-input"
+                    placeholder="Acme Corporation"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="email"
+                    >Email Address <span>*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="j.chen@acmecorp.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-input"
+                    placeholder="+1 (555) 123-4567"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="companySize"
+                    >Company Size <span>*</span></label
+                  >
+                  <select
+                    id="companySize"
+                    name="companySize"
+                    class="form-select"
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Select company size
+                    </option>
+                    <option value="1-50">1-50 employees</option>
+                    <option value="51-200">51-200 employees</option>
+                    <option value="201-1000">201-1000 employees</option>
+                    <option value="1001-5000">1001-5000 employees</option>
+                    <option value="5000+">5000+ employees</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="serviceInterest"
+                    >Service Interest <span>*</span></label
+                  >
+                  <select
+                    id="serviceInterest"
+                    name="serviceInterest"
+                    class="form-select"
+                    required
+                  >
+                    <option value="" disabled selected>Select focus area</option>
+                    <option value="automation">
+                      Business Process Automation
+                    </option>
+                    <option value="consulting">Strategic IT Consulting</option>
+                    <option value="transformation">
+                      Digital Transformation Advisory
+                    </option>
+                    <option value="full">Full Suite Engagement</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="budgetRange">Budget Range</label>
+                <select id="budgetRange" name="budgetRange" class="form-select">
+                  <option value="" disabled selected>Select budget range</option>
+                  <option value="5k-15k">$5,000 - $15,000</option>
+                  <option value="15k-50k">$15,000 - $50,000</option>
+                  <option value="50k-150k">$50,000 - $150,000</option>
+                  <option value="150k+">$150,000+</option>
+                  <option value="undecided">Undecided / Seeking Guidance</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message"
+                  >Your Message <span>*</span></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  placeholder="Tell us about your operational challenges, current technology stack, and what success would look like for your organization..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="form-submit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                Send Inquiry
+              </button>
+            </form>
+            <div class="form-success" id="formSuccess">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="64"
+                height="64"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <h3>Inquiry Received</h3>
+              <p>
+                Thank you for reaching out. A senior VelocIQ consultant will
+                contact you within one business day to discuss your requirements
+                and schedule a personalized discovery call.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact Contact Details Bar -->
+      <div class="connect-details-bar">
+        <div class="connect-detail-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Palo Alto, CA</span>
+        </div>
+        <div class="connect-detail-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>+1 (650) 555-0142</span>
+        </div>
+        <div class="connect-detail-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>engage@velociq.com</span>
         </div>
       </div>
     </section>
@@ -3797,7 +2972,7 @@
 
       document
         .querySelectorAll(
-          '.service-card, .pricing-card, .testimonial-card, .faq-item, .calendar-info, .calendar-wrapper, .contact-info, .contact-form-wrapper'
+          '.service-card, .pricing-card, .testimonial-card-compact, .faq-item, .calendar-wrapper, .contact-form-wrapper'
         )
         .forEach((el) => {
           observer.observe(el);
